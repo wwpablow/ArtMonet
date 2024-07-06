@@ -1,0 +1,103 @@
+@font-face{
+    font-family:'old';
+    src:url("IowanOldStyleBT-Roman.otf");
+  }
+  @font-face{
+    font-family:'ginger';
+    src:url("ginger-brand.otf");
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .navbar{
+    overflow: hidden;
+  }
+  .nav-link{
+    margin-right: 16px;
+  }
+  .nav-item a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'old';
+    font-size:3vh;
+  }
+  .nav-item a:hover {
+    background-color: #faf3dd;
+    color: #ad5f87;
+  }
+  .footer{
+    height: 100px;
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    position: relative;
+    cursor: pointer;
+}
+  .footer .scroll{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    border:2px solid #faf3dd;
+    position: absolute;
+    left: 5%;
+    top: -25px;
+    z-index: 10;
+    animation: scrollA infinite 20s linear alternate;
+  }
+  @keyframes scrollA {
+    0% {left: 5%;transform: rotate(180deg);};
+    10% {left: 5%;transform: rotate(270deg);}
+    20% {left: 5%;transform: rotate(450deg);}
+    25% {left: 10%;transform: rotate(540deg);}
+    30% {left: 20%;transform: rotate(720deg);}
+    35% {left: 30%;transform: rotate(900deg);}
+    40% {left: 40%;transform: rotate(1080deg);}
+    45% {left: 50%;transform: rotate(1260deg);}
+    50% {left: 60%;transform: rotate(1440deg);}
+    55% {left: 70%;transform: rotate(1620deg);}
+    60% {left: 80%;transform: rotate(1800deg);}
+    80% {left: 90%;transform: rotate(2610deg);}
+    90% {left: 90%;transform: rotate(2340deg);}
+    100% {left: 90%;transform: rotate(2520deg);}
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 400px auto;
+  }
+  .second-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .sub-column{
+    display:flex;
+    align-items: center;
+  }
+  ul{
+    padding-left: 0px;
+    margin:0px;
+    margin-left: 10px;
+    font-size:15px;
+    -webkit-transition: .5s all ease;
+    -moz-transition: .5s all ease;
+    transition: .5s all ease;
+  }
+  ul.social li:hover a i {
+    font-size:20px;
+    margin-top:-10px;
+  }
+  ul.social li a{
+    color:#ffffff;
+  }
+  ul.social li a:hover{
+    color:#eeeeee;
+  }
+  .contact-section {
+    display: flex;
+    align-items: center;
+  }

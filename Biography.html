@@ -1,0 +1,142 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Life of Claude Monet">
+    <meta name="keywords" content="Claude Monet, Paintings, Biography"> 
+    <title>Life of Claude Monet - Biography</title>
+    <link rel="icon" href="assets/042.jpg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="biography.css">  
+  </head>
+
+<body>
+  <nav class="navbar fixed-top navbar-expand-md">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+            <a class="nav-link home" href="Index.html">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="Biography.html">Biography</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Explorebymap.html">Map</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="About.html">About</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="timeline-container" id="timeline-1">
+    <div class="timeline-header">
+      <h2 class="timeline-header__title">Life of Claude Monet</h2>
+      <h3 class="timeline-header__subtitle">14 November 1840 – 5 December 1926</h3>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item" data-text="1840-1857">
+        <div class="timeline__content"><img class="timeline__img" src="assets/snow.jpg" alt="Painting of snow at Argenteuil">
+          <h2 class="timeline__content-title">Childhood</h2>
+          <p class="timeline__content-desc">Claude Monet was born on 14 November 1840. On 20 May 1841, he was baptised in the local Paris church, Notre-Dame-de-Lorette.Despite being baptised Catholic, Monet later became an atheist.In 1845, his family moved to Le Havre in Normandy.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-text="1858-1871">
+        <div class="timeline__content"><img class="timeline__img" src="assets/Bio,La-Grenouillere.jpg" alt="Painting of Bathing at Grenouillere, 1869">
+          <h2 class="timeline__content-title">Radical Steps</h2>
+          <p class="timeline__content-desc">From 1858 to 1860, Monet continued his studies in Paris, where he enrolled in Académie Suisse and met Camille Pissarro in 1859. He was called for military service in Algeria, from 1861 to 1862. His time in Algeria had a powerful effect on Monet, who later said that the light and vivid colours of North Africa "contained the gem of my future researches". During this time, his work was considered radical, "discouraged at all official levels".</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-text="1872-1882">
+        <div class="timeline__content"><img class="timeline__img" src="assets/Bio,Sunrise.jpg" alt="Painting of Sunrise, 1872">
+          <h2 class="timeline__content-title">Impressionist Movement</h2>
+          <p class="timeline__content-desc">At the first exhibition, in 1874, Monet displayed, among others, Impression, Sunrise, The Luncheon and Boulevard des Capucines. An art critic coined the term "Impressionism", denoting the painting as unfinished.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-text="1883-1898">
+        <div class="timeline__content"><img class="timeline__img" src="assets/poplar.jpg" alt="Painting of poplars, 1891">
+          <h2 class="timeline__content-title">Single Subjects</h2>
+          <p class="timeline__content-desc">Dissatisfied with the limitations of Impressionism, Monet began to work on series of paintings displaying single subjects: haystacks, poplars and the Rouen Cathedral, to resolve his frustration.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-text="1899-1915">
+        <div class="timeline__content"><img class="timeline__img" src="assets/Bio,Nympheas.jpg" alt="Painting of Waterlilies, 1915">
+          <h2 class="timeline__content-title">Water Lilies</h2>
+          <p class="timeline__content-desc">In 1899, he began painting the water lilies that would occupy him continuously for the next 20 years of his life, being his last and "most ambitious" sequence of paintings.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-text="1916-1926">
+        <div class="timeline__content"><img class="timeline__img" src="assets/Bio,Weeping-Willow.jpg" alt="Painting of Weeping Willow, 1918">
+          <h2 class="timeline__content-title">Late Paintings</h2>
+          <p class="timeline__content-desc">During World War I, in which his younger son, Michel, served, Monet painted a Weeping Willow series as homage to the French fallen soldiers. He became deeply dedicated to the decorations of his garden during the war.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script defer src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js'></script>      
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script>
+      (function($) {
+    $.fn.timeline = function() {
+      var selectors = {
+        id: $(this),
+        item: $(this).find(".timeline-item"),
+        activeClass: "timeline-item--active",
+        img: ".timeline__img"
+      };
+      selectors.item.eq(0).addClass(selectors.activeClass);
+      selectors.id.css(
+        "background-image",
+        "url(" +
+          selectors.item
+            .first()
+            .find(selectors.img)
+            .attr("src") +
+          ")"
+      );
+      var itemLength = selectors.item.length;
+      $(window).scroll(function() {
+        var max, min;
+        var pos = $(this).scrollTop();
+        selectors.item.each(function(i) {
+          min = $(this).offset().top;
+          max = $(this).height() + $(this).offset().top;
+          var that = $(this);
+          if (i == itemLength - 2 && pos > min + $(this).height() / 2) {
+            selectors.item.removeClass(selectors.activeClass);
+            selectors.id.css(
+              "background-image",
+              "url(" +
+                selectors.item
+                  .last()
+                  .find(selectors.img)
+                  .attr("src") +
+                ")"
+            );
+            selectors.item.last().addClass(selectors.activeClass);
+          } else if (pos <= max - 40 && pos >= min) {
+            selectors.id.css(
+              "background-image",
+              "url(" +
+                $(this)
+                  .find(selectors.img)
+                  .attr("src") +
+                ")"
+            );
+            selectors.item.removeClass(selectors.activeClass);
+            $(this).addClass(selectors.activeClass);
+          }
+        });
+      });
+    };
+  })(jQuery);
+  $("#timeline-1").timeline();
+  </script>
+</body>
+</html>
