@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore a visual map showcasing the geographic distribution of Monet's artworks.">
+    <meta name="keywords" content="Claude Monet, Paintings, Map"> 
+    <title>Explore by map - Gallery</title>
+    <link rel="icon" href="assets/042.jpg">
+	<link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <script defer src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js'></script>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="map.css">
+</head>
+    <style>
+    .nav-item a {
+        color: #ad5f87;
+    }
+  </style>
+<body>
+    <nav class="navbar navbar-expand-md fixed-top">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link home" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Biography.html">Biography</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="Explorebymap.html">Map</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="About.html">About</a>
+                </li>
+            </ul>
+        </div>
+      </nav>
+    
+    <div id="map-container">
+    <div id="map"></div>
+    </div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1Ijoic3VtbWVycnJyciIsImEiOiJjbHA0bXJvbGswMnpuMmtwZzRrcTRqenM0In0.ZPiR8wC-kcNix7JPZ40T8Q'; 
+
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/summerrrrr/clqv112qc00zo01pj5hmk0brt',
+            center: [2.3483915, 48.8534951], 
+            zoom: 5
+        });
+
+        const geojson = [
+            {
+                'title': 'Hauling a Boat Ashore, Honfleur',
+                'description': 'Date: 1864<br/>Location: Honfleur<br/>Genre: Landscape<br/><a href="assets/Honfleur.jpg">Explore</a>',
+                'icon': 'assets/Honfleur.jpg',
+                'coordinates': [0.233889, 49.419722]
+            },
+            {
+                'title': 'Bain de la Grenouillere ',
+                'description': 'Date: 1869<br/>Location: Bougival<br/>Genre: Landscape<br/><a href="assets/bain de la grenouillere.webp">Explore</a>',
+                'icon': 'assets/bain de la grenouillere.webp',
+                'coordinates': [2.137684, 48.865653]
+            },
+            {
+                'title': 'The Beach at Trouville',
+                'description': 'Date: 1870<br/>Location: Trouville<br/>Genre: Landscape<br/><a href="assets/Trouville.jpg">Explore</a>',
+                'icon': 'assets/Trouville.jpg',
+                'coordinates': [0.082500, 49.368333]
+            }, 
+            {
+                'title': 'Sunrise',
+                'description': 'Date: 1872<br/>Location: Le Havre<br/>Genre: Landscape<br/><a href="assets/sunrise.jpg">Explore</a>',
+                'icon': 'assets/sunrise.jpg',
+                'coordinates': [0.134684, 49.478175]
+            },
+            {
+                'title': 'The Promenade, Woman with a Parasol',
+                'description': 'Date: 1875<br/>Location: Argenteuil<br/>Genre: Landscape<br/><a href="assets/Woman with a Parasol.jpg">Explore</a>',
+                'icon': 'assets/Woman with a Parasol.jpg',
+                'coordinates': [2.24818, 48.947907]
+            },
+            {
+                'title': 'Saint-Lazare Station, Arrival of a Train',
+                'description': 'Date: 1877<br/>Location: Paris<br/>Genre: Cityscape<br/><a href="assets/Saint-Lazare Station.jpg">Explore</a>',
+                'icon': 'assets/Saint-Lazare Station.jpg',
+                'coordinates': [2.325014, 48.877006] 
+            },
+            {
+                'title': 'Etretat, Cliff of d’Aval, Sunset',
+                'description': 'Date: 1885<br/>Location: Etretat<br/>Genre: Landscape<br/><a href="assets/Etretat.jpg">Explore</a>',
+                'icon': 'assets/Etretat.jpg',
+                'coordinates': [0.205566, 49.707627]
+            },
+            {
+                'title': 'Antibes',
+                'description': 'Date: 1888<br/>Location: Antibes<br/>Genre: Landscape<br/><a href="assets/Antibes.jpg">Explore</a>',
+                'icon': 'assets/Antibes.jpg',
+                'coordinates': [7.10905, 43.5836]
+            },
+            {
+                'title': 'Japanese Bridge and Water Lily Pond',
+                'description': 'Date: 1899<br/>Location: Giverny<br/>Genre: Landscape<br/><a href="assets/Japanese Bridge and Water Lily Pond.jpg">Explore</a>',
+                'icon': 'assets/Japanese Bridge and Water Lily Pond.jpg',
+                'coordinates': [1.527101, 49.1]
+            }, 
+            {
+                'title': 'Waterloo Bridge',
+                'description': 'Date: 1900<br/>Location: London, United Kingdom<br/>Genre: Landscape<br/><a href="assets/Waterloo Bridge.jpg">Explore</a>',
+                'icon': 'assets/Waterloo Bridge.jpg',
+                'coordinates': [-0.106129, 51.503484]
+            },
+            {
+                'title': 'Houses of Parliament',
+                'description': 'Date: 1904<br/>Location: London, United Kingdom<br/>Genre: Landscape<br/><a href="assets/houses of parliament.jpg">Explore</a>',
+                'icon': 'assets/houses of parliament.jpg',
+                'coordinates': [-0.125876, 51.501126]
+            },
+            {
+                'title': 'Water Lilies',
+                'description': 'Date: 1920-1926<br/>Location: Giverny<br/>Genre: Landscape<br/><a href="assets/Water Lilies.jpg">Explore</a>',
+                'icon': 'assets/Water Lilies.jpg',
+                'coordinates': [1.527101, 49.076090]
+            },
+        ];
+
+        map.on('load', () => {
+            for (const item of geojson) {
+                const el = document.createElement('img');
+                el.className = 'marker';
+                el.src = item.icon; 
+
+                let mhtml = `<div class="malert">
+                                <h2 class="pti1">${item.title}</h2>
+                                <div class="pti2">${item.description}</div>
+                            </div>`
+
+                let popup1 = new mapboxgl.Popup()
+                    .setHTML(mhtml)
+
+                new mapboxgl.Marker(el)
+                    .setLngLat(item.coordinates)
+                    .setPopup(popup1)
+                    .addTo(map);
+            }
+        });
+	    </script>
+    </body>
+</html>
